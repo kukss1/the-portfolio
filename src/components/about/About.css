@@ -1,0 +1,29 @@
+.about_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: calc(var(--index) * 10);
+    width: 100vw;
+}
+
+.about_title {
+    font-size: calc(var(--index) *3);
+    text-align: center;
+    color: var(--color-header);
+    margin-top: calc(var(--index) * 7);
+}
+
+.about_wrapper img {
+    width: calc(var(--index)*10);
+}
+
+.about_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_content p {
+    font-size: calc(var(--index) * 0.8);
+    line-height: 1.5;
+    color: var(--color-text);
+}
