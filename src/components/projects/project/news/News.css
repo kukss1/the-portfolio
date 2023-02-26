@@ -65,10 +65,22 @@
     align-items: center;
     justify-content: center;
     height: calc(var(--index)*2.5);
-    width: calc(var(--index)*6);
     margin: calc(var(--index)*1);
     border-radius: 2vh;
 }
+
+
+@media screen and (max-width: 450px) {
+    .links a {
+        font-size: calc(var(--index)*0.9);
+        width: calc(var(--index)*5);
+    }
+    .news_main_page {
+        font-size: calc(var(--index)*1.2);
+        width: calc(var(--index)*6);
+    }
+}
+
 
 .links {
     display: flex;

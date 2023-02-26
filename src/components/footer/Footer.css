@@ -10,21 +10,17 @@
     background-position: right top;
     background-size: calc(var(--index)*18);
 }
-
 .footer_btn {
     font-size: calc(var(--index)*1);
     color: var(--color-text);
     cursor: pointer;
     margin: 0 2vw;
     border: none;
-    background: none;
-    
+    background: none; 
 }
-
 .footer_btn:hover {
     filter:drop-shadow(1px 1px 1px white)
 }
-
 .contact_title {
     color: var(--color-header);
     font-weight: 300;
@@ -36,7 +32,6 @@
 .footer_nav a {
     background: none;
 }
-
 .footer_nav img {
     width: calc(var(--index)*2.5);
     margin: 2vh 2vw;
@@ -45,7 +40,15 @@
 .footer_nav img:hover {
     filter: drop-shadow(1px 1px 1px #868faa);
 }
-
 .footer_nav {
     margin-left: 0 ;
+}
+@media screen and (max-width: 450px)  {
+    .footer_wrapper {
+        background: none;
+        justify-content: center;
+    }
+    .contact_title {
+        font-size: calc(var(--index)*1);
+    }
 }

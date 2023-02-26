@@ -30,6 +30,12 @@
     justify-content: center;
     align-items: center;
 }
+@media screen and (max-width: 450px) {
+    .nasa_body {
+        flex-direction: column;
+        margin-bottom: calc(var(--index)*1);
+    }
+}
 .nasa_body p {
     color: var(--color-text);
     font-size: calc(var(--index)*1);

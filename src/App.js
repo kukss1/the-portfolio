@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import Aside from "./components/aside/Aside";
-import Footer from "./components/footer/Foote";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 
 function App() {
   const [time, setTime] = useState(new Date());
-  const [color, setColor] = useState("#303134");
+  const [color, setColor] = useState("#161f1d");
 
 
   const handleColorChange = () => {
@@ -30,6 +30,7 @@ function App() {
     <div className="App " style={{ backgroundColor: color }}>
       <h2 className="clock">{time.toLocaleTimeString()}</h2>
       <button onClick={handleColorChange} className="color_picker">Random Color Picker</button>
+      <h3 className="version">Version 1.00012</h3>
       <Header />
       <Aside />
       <Footer/>

@@ -20,6 +20,13 @@
     cursor: pointer;
 }
 
+.version {
+    position: absolute;
+    left: 55vw;
+    top: 1vh;
+    font-size: calc(var(--index)*0.7);
+}
+
 .clock {
     display: flex;
     justify-content: center;

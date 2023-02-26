@@ -51,12 +51,14 @@ function News() {
         <NavLink to="/news/mediaNews">Media</NavLink>
           </div>
       </nav>
-      <Routes>
+
+              <Routes>
          <Route path="/" element={<NewsBody articles={articles} />}/>
          <Route path="/politicNews" element={<PoliticsNews/>}/>
          <Route path="/sportNews" element={<SportNews />}/>
          <Route path="/mediaNews" element={<MediaNews />}/>
       </Routes>
+
 
     </div>
   );

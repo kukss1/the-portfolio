@@ -34,6 +34,12 @@
     filter: contrast(-2);
 }
 
+@media screen and (max-width: 450px) {
+    .projects_nav a {
+        font-size: calc(var(--index)*0.7);
+    }
+}
+
 .projects_nav a:hover {
     background-color: rgb(184, 229, 252);
     color: black;

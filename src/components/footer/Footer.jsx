@@ -16,9 +16,9 @@ function Footer() {
  <button className='footer_btn' onClick={handleClick}>Send Me Email</button>
  <h2 className='contact_title'>or find me in</h2>
  <nav className='footer_nav'>
-    <a href="https://t.me/torosya1666'"><img src={telegram} alt="telegram" /></a>
-    <a href="https://www.instagram.com/torosyan1666/"><img src={instagram} alt="instagram" /></a>
-    <a href="https://www.facebook.com/kuk.ss21/"><img src={facebook} alt="facebook" /></a>
+    <a href="https://t.me/torosya1666'" target='_blank'rel="noreferrer" ><img src={telegram} alt="telegram" /></a>
+    <a href="https://www.instagram.com/torosyan1666/" target='_blank'rel="noreferrer"><img src={instagram} alt="instagram" /></a>
+    <a href="https://www.facebook.com/kuk.ss21/" target='_blank'rel="noreferrer"><img src={facebook} alt="facebook" /></a>
  </nav>
         </footer>
      );
