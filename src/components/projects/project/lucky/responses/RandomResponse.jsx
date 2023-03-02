@@ -39,7 +39,7 @@ console.log(selectedResponse)
       </div>
       <div className="response_btn">
         <button onClick={handleClick} className="response_btn_body"  >
-        {isLoading ? <img src={btnload} alt="load" className="response_btn_loader"/> : "Try It"}
+        {isLoading ? <img src={btnload} alt="load" className="response_btn_loader"/> : "Tap to know"}
         </button>
       </div>
     </>

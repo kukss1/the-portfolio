@@ -6,7 +6,7 @@ import RandomResponse from './responses/RandomResponse';
 function Lucky() {
   return (
     <div className='lucky_wrapper'>
-      <h1 className='lucky_title'>Try it</h1>
+      <h1 className='lucky_title'>Am I lucky today?</h1>
       <RandomResponse responses={responses} />
     </div>
   );

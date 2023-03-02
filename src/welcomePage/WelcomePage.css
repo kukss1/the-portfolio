@@ -1,0 +1,20 @@
+.welcome_wrapper {
+    font-size: calc(var(--index)*2);
+}
+.welcome_wrapper input {
+    margin: calc(var(--index)*2);
+    width: calc(var(--index)*25);
+    height: calc(var(--index)*1);
+    border: none;
+    background: none;
+    border-bottom: 2px solid black;
+    padding: calc(var(--index)*2);
+    font-size: calc(var(--index)*2);
+}
+.welcome_second_title {
+    display: flex;
+    
+}
+.welcome_second_title p{
+    padding: 0 2vw;
+}
