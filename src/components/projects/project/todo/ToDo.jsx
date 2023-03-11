@@ -78,6 +78,7 @@ function ToDo() {
           onKeyDown={(e) => keyPress(e)}
         />
         <Button
+          color="secondary"
           className="enter"
           variant="contained"
           onClick={newItem}

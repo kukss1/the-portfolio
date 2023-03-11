@@ -32,7 +32,7 @@ function Projects() {
       <Box sx={{ display: "flex", justifyContent: "center"}}>
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           aria-controls="projects-menu"
           aria-haspopup="true"
           onClick={handleOpen}
@@ -45,7 +45,7 @@ function Projects() {
               <NavLink to={project.path} sx={{ display: "flex", alignItems: "center" }}>
                 <IconButton
                   sx={{ mr: 1, boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.25)", "&:hover": { transform: "translateY(-3px)" } }}
-                  color="secondary"
+                  color="primary"
                   aria-label={project.title}
                 >
                   {project.icon}

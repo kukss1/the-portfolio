@@ -10,7 +10,7 @@ import {
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-function Header({ themeMode, onToggleTheme }) {
+function Header({ themeMode, onToggleThemeMode }) {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -28,9 +28,9 @@ function Header({ themeMode, onToggleTheme }) {
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             <Link to="/">Welcome to my portfolio page</Link>
           </Typography>
-          <IconButton onClick={onToggleTheme}>
-          {themeMode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
-        </IconButton>
+          <IconButton onClick={onToggleThemeMode}>
+            {themeMode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
+          </IconButton>
           <Typography variant="subtitle1" sx={{ ml: 2, flexGrow: 0 }}>
             {time.toLocaleTimeString()}
           </Typography>

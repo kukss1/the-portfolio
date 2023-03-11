@@ -4,7 +4,7 @@ import RandomResponse from "./responses/RandomResponse";
 
 function Lucky() {
   return (
-    <Box sx={{ backgroundColor: "#fff", py: 8 }}>
+    <Box sx={{ backgroundColor: "secondary", py: 8 }}>
       <Box
         sx={{
           display: "flex",

@@ -39,7 +39,7 @@ function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ mt: 8, backgroundColor: "#f2f2f2" }}>
+      <Box sx={{ mt: 8, backgroundColor: "secondary" }}>
         <Typography variant="h3" align="center" mb={4}>
           About Me
         </Typography>

@@ -9,14 +9,14 @@ const ResponseWrapper = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   minHeight: "200px",
-  backgroundColor: "#f5f5f5",
+  backgroundColor: "secondary",
   borderRadius: "10px",
 });
 
 const ResponseBody = styled(animated.h1)({
   fontSize: "2.5rem",
   fontWeight: "bold",
-  color: "#000",
+  color: "primary",
 });
 
 const ResponseBtnWrapper = styled("div")({
@@ -25,7 +25,7 @@ const ResponseBtnWrapper = styled("div")({
 });
 
 const ResponseBtnLoader = styled(CircularProgress)({
-  color: "#fff",
+  color: "primary",
   marginRight: "10px",
 });
 
@@ -73,7 +73,7 @@ const RandomResponse = ({ responses }) => {
         {isLoading ? (
           <CircularProgress color="primary" />
         ) : (
-          <ResponseBody style={fadeIn}>{selectedResponse}</ResponseBody>
+          <ResponseBody style={fadeIn} color="primary">{selectedResponse}</ResponseBody>
         )}
       </ResponseWrapper>
       <ResponseBtnWrapper>

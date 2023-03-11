@@ -46,7 +46,7 @@ function News() {
           onChange={inputHandler}
           sx={{ mr: 2 }}
         />
-        <Button variant="contained" onClick={btnHandler}>
+        <Button variant="contained" onClick={btnHandler} color="secondary">
           Search
         </Button>
       </Box>

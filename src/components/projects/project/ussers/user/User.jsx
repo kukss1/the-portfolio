@@ -13,7 +13,7 @@ function AnimatedCard({ children }) {
 
 function User({ users }) {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", justifyContent:"center", backgroundColor: "#f6f6f6", padding: "50px 0" }}>
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent:"center", backgroundColor: "secondary", padding: "50px 0" }}>
       {users.map((user) => (
         <AnimatedCard key={user.id}>
           <Card sx={{ mb: 4, mr: 4, maxWidth: "300px", backgroundColor: "#fff", borderRadius: "20px", overflow: "hidden", boxShadow: "0 15px 30px rgba(0,0,0,.1)" }}>

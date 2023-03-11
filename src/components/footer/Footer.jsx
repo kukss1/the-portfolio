@@ -37,7 +37,7 @@ function Footer() {
 
   return (
     <FooterWrapper>
-      <Button variant="contained" onClick={handleClick}>
+      <Button variant="contained" color='secondary' onClick={handleClick}>
         Send Me Email
       </Button>
       <ContactTitle>OR</ContactTitle>

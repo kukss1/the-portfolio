@@ -31,8 +31,8 @@ function Users() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <Box sx={{ padding: "50px" }}>
-      <Typography variant="h3" sx={{ mb: 4, color: "#272727", textAlign: "center" }}>
+    <Box sx={{ padding: "50px" , backgroundColor:"secondary" }}>
+      <Typography variant="h3" sx={{ mb: 4, color: "secondary", textAlign: "center" }}>
         Users Card
       </Typography>
       {isLoading ? (

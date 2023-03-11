@@ -63,7 +63,7 @@ function Nasa() {
           {nasaApi.explanation}
         </Typography>
         
-        <Button variant="outlined" href={nasaApi.url} target="_blank" rel="noreferrer">
+        <Button variant="outlined" color="secondary" href={nasaApi.url} target="_blank" rel="noreferrer">
           See Photo
         </Button>
       </Wrapper>
