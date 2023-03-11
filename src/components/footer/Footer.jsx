@@ -13,8 +13,9 @@ const FooterWrapper = styled('footer')({
 });
 
 const ContactTitle = styled('h2')({
-  margin: '1rem',
-  color:"GrayText"
+  margin: '5px',
+  color:"GrayText",
+  fontSize:"14px"
 });
 
 const FooterNav = styled('nav')({
