@@ -7,7 +7,7 @@ function Projects() {
   const projectList = [
     { title: "Try your luck", path: "lucky", icon: <MdCasino /> },
     { title: "ToDo with React draggable", path: "todo", icon: <MdList /> },
-    { title: "Fetching data with interesting user cards", path: "fetch", icon: <MdWidgets /> },
+    { title: "Fetching data with interesting user cards", path: "users", icon: <MdWidgets /> },
     { title: "Just calculator", path: "calculator", icon: <MdFunctions /> },
     { title: "Live News from The Guardian news portal", path: "news", icon: <MdPublic /> },
     { title: "Wonderful NASA's Photo of Day", path: "nasa", icon: <MdCamera /> },

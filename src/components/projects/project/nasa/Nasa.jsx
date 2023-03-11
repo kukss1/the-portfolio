@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CircularProgress, Typography } from "@mui/material";
+import { CircularProgress, Typography, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 
@@ -20,7 +20,7 @@ const Wrapper = styled(Box)({
 const Image = styled("img")({
   width: "100%",
   objectFit: "cover",
-  maxHeight: "50vh",
+  maxHeight: "25vh",
   borderRadius: 10,
 });
 
@@ -59,12 +59,13 @@ function Nasa() {
         ) : (
           <Image src={nasaApi.hdurl} alt="NASA pic of the day" />
         )}
-        <Typography variant="body1" align="justify">
+        <Typography variant="body1" align="justify" marginX={10}>
           {nasaApi.explanation}
         </Typography>
-        <a href={nasaApi.url} target="_blank" rel="noreferrer">
+        
+        <Button variant="outlined" href={nasaApi.url} target="_blank" rel="noreferrer">
           See Photo
-        </a>
+        </Button>
       </Wrapper>
     </>
   );
