@@ -1,6 +1,41 @@
 import { useEffect, useState } from "react";
+import { styled } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 
-import "./Calculator.css";
+
+const CalculatorWrapper = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: "50px",
+});
+
+const NumButton = styled(Button)({
+  minWidth: "50px",
+  minHeight: "50px",
+  margin: "5px",
+  color:"#fff",
+  backgroundColor:"GrayText"
+});
+
+const OperatorButton = styled(Button)({
+  minWidth: "50px",
+  minHeight: "50px",
+  margin: "5px",
+  backgroundColor: "#f44336",
+  color: "#fff",
+});
+
+const ClearButton = styled(Button)({
+  minWidth: "100px",
+  minHeight: "50px",
+  margin: "5px",
+  backgroundColor: "#f44336",
+  color: "#fff",
+});
 
 function Calculator() {
   const [expression, setExpression] = useState("");
@@ -112,85 +147,53 @@ function Calculator() {
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => {
-      // Remove event listener when component unmounts
+
       document.removeEventListener("keydown", handleKeyDown);
     };
   });
 
   return (
     <>
-      <h1 className="calc_title">Calculator</h1>
-      <dir className="calculator_wrapper">
-        <div>
-          <input
-            type="text"
+      <h1 style={{ textAlign: "center" }}>Calculator</h1>
+      <CalculatorWrapper container>
+        <Grid item>
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
             value={expression}
-            readOnly
-            className="calc_input"
+            inputProps={{ style: { textAlign: "center" } }}
+            InputProps={{ readOnly: true }}
+            fullWidth
           />
-        </div>
-        <div>
-          <button onClick={() => handleClick("1")} className="num">
-            1
-          </button>
-          <button onClick={() => handleClick("2")} className="num">
-            2
-          </button>
-          <button onClick={() => handleClick("3")} className="num">
-            3
-          </button>
-          <button onClick={() => handleClick("+")} className="calc_plus">
-            +
-          </button>
-        </div>
-        <div>
-          <button onClick={() => handleClick("4")} className="num">
-            4
-          </button>
-          <button onClick={() => handleClick("5")} className="num">
-            5
-          </button>
-          <button onClick={() => handleClick("6")} className="num">
-            6
-          </button>
-          <button onClick={() => handleClick("-")} className="calc_minus">
-            -
-          </button>
-        </div>
-        <div>
-          <button onClick={() => handleClick("7")} className="num">
-            7
-          </button>
-          <button onClick={() => handleClick("8")} className="num">
-            8
-          </button>
-          <button onClick={() => handleClick("9")} className="num">
-            9
-          </button>
-          <button onClick={() => handleClick("*")} className="calc_multiply">
-            *
-          </button>
-        </div>
-        <div>
-          <button onClick={() => handleClick(".")} className="num">
-            .
-          </button>
-          <button onClick={() => handleClick("0")} className="num">
-            0
-          </button>
-          <button onClick={() => handleClick("/")} className="calc_divide">
-            /
-          </button>
-        </div>
-        <div>
-          <button onClick={handleEvaluate} className="calc_smooth">
-            =
-          </button>
-          <button onClick={handleClear} className="calc_clear_btn">
-            Clear
-          </button>
-        </div>
-      </dir>
+        </Grid>
+        <Grid item>
+          <NumButton onClick={() => handleClick("1")}>1</NumButton>
+          <NumButton onClick={() => handleClick("2")}>2</NumButton>
+          <NumButton onClick={() => handleClick("3")}>3</NumButton>
+          <OperatorButton onClick={() => handleClick("+")}>+</OperatorButton>
+        </Grid>
+        <Grid item>
+          <NumButton onClick={() => handleClick("4")}>4</NumButton>
+          <NumButton onClick={() => handleClick("5")}>5</NumButton>
+          <NumButton onClick={() => handleClick("6")}>6</NumButton>
+          <OperatorButton onClick={() => handleClick("-")}>-</OperatorButton>
+        </Grid>
+        <Grid item>
+          <NumButton onClick={() => handleClick("7")}>7</NumButton>
+          <NumButton onClick={() => handleClick("8")}>8</NumButton>
+          <NumButton onClick={() => handleClick("9")}>9</NumButton>
+          <OperatorButton onClick={() => handleClick("*")}>*</OperatorButton>
+        </Grid>
+        <Grid item>
+          <NumButton onClick={() => handleClick(".")}>.</NumButton>
+          <NumButton onClick={() => handleClick("0")}>0</NumButton>
+          <OperatorButton onClick={() => handleClick("/")}>/</OperatorButton>
+        </Grid>
+        <Grid item>
+          <OperatorButton onClick={handleEvaluate}>=</OperatorButton>
+          <ClearButton onClick={handleClear}>Clear</ClearButton>
+        </Grid>
+      </CalculatorWrapper>
     </>
   );
 }

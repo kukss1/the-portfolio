@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getArticlesByTag } from "../newsApi";
-
-import "../newsBody/NewsBody.css";
-
-import load from "../../../../../assets/images/gif/YlWC.gif";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Link from "@mui/material/Link";
 
 function PoliticsNews() {
   const [articles, setArticles] = useState([]);
@@ -21,21 +21,26 @@ function PoliticsNews() {
 
   return (
     <>
-      <h1 className="news_body_title">Politics</h1>
+      <Typography variant="h3" sx={{ mt: 3 }}>
+        Politics
+      </Typography>
       {isLoading ? (
-        <img src={load} alt="load" />
+        <Stack sx={{ mt: 3 }} direction="row" alignItems="center">
+          <CircularProgress />
+          <Typography>Loading articles...</Typography>
+        </Stack>
       ) : (
-        <div className="newsBody_wrapper">
+        <Stack sx={{ mt: 3 }} spacing={1}>
           {articles.map((article) => {
             return (
-              <h4 key={article.id}>
-                <a href={article.webUrl} target="_blank" rel="noreferrer">
+              <Typography key={article.id} variant="h6" component="div">
+                <Link href={article.webUrl} target="_blank" rel="noreferrer">
                   {article.webTitle}
-                </a>
-              </h4>
+                </Link>
+              </Typography>
             );
           })}
-        </div>
+        </Stack>
       )}
     </>
   );

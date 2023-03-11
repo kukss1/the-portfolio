@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticlesByTag } from "../newsApi";
-
-import "../newsBody/NewsBody.css";
-import load from "../../../../../assets/images/gif/YlWC.gif";
+import { Box, CircularProgress, Typography, Link } from "@mui/material";
 
 function MediaNews() {
   const [articles, setArticles] = useState([]);
@@ -19,25 +17,26 @@ function MediaNews() {
   };
 
   return (
-    <>
-      <h1 className="news_body_title">Media</h1>
-
+    <Box mt={4}>
+      <Typography variant="h4" gutterBottom>
+        Media
+      </Typography>
       {isLoading ? (
-        <img src={load} alt="load" />
+        <Box display="flex" justifyContent="center">
+          <CircularProgress />
+        </Box>
       ) : (
-        <div className="newsBody_wrapper">
-          {articles.map((article) => {
-            return (
-              <h4 key={article.id}>
-                <a href={article.webUrl} target="_blank" rel="noreferrer">
-                  {article.webTitle}
-                </a>
-              </h4>
-            );
-          })}
-        </div>
+        <Box display="flex" flexDirection="column">
+          {articles.map((article) => (
+            <Box key={article.id} mt={2}>
+              <Link href={article.webUrl} target="_blank" rel="noreferrer">
+                <Typography variant="h6">{article.webTitle}</Typography>
+              </Link>
+            </Box>
+          ))}
+        </Box>
       )}
-    </>
+    </Box>
   );
 }
 

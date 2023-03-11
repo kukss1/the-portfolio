@@ -1,27 +1,60 @@
-import './Footer.css'
+import { Button, styled } from '@mui/material';
+import { FaTelegramPlane } from "react-icons/fa";
+import { AiOutlineFacebook } from 'react-icons/ai';
+import { AiOutlineInstagram } from "react-icons/ai";
+import {AiOutlineLinkedin} from "react-icons/ai"
+const FooterWrapper = styled('footer')({
+  display: 'flex',
+  justifyContent: "center",
+  alignItems: 'center',
+  marginTop: '2rem',
+  paddingTop: '2rem',
+  borderTop: '1px solid #ccc',
+});
 
-import telegram from '../../assets/images/svg/telegram.svg'
-import facebook from '../../assets/images/svg/facebook.svg'
-import instagram from '../../assets/images/svg/instagram.svg'
+const ContactTitle = styled('h2')({
+  margin: '1rem',
+  color:"GrayText"
+});
+
+const FooterNav = styled('nav')({
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: '1rem',
+});
+
+const SocialLink = styled('a')({
+  margin: '0 1rem',
+});
 
 function Footer() {
+  const handleClick = () => {
+    window.location.href =
+      'mailto:kukt94@gmail.com?subject=Example Subject&body=Example Body';
+  };
 
-    const handleClick = () => {
-        window.location.href = 'mailto:kukt94@gmail.com?subject=Example Subject&body=Example Body';
-    }
-
-
-    return ( 
-        <footer className='footer_wrapper'>
- <button className='footer_btn' onClick={handleClick}>Send Me Email</button>
- <h2 className='contact_title'>or find me in</h2>
- <nav className='footer_nav'>
-    <a href="https://t.me/torosya1666'" target='_blank'rel="noreferrer" ><img src={telegram} alt="telegram" /></a>
-    <a href="https://www.instagram.com/torosyan1666/" target='_blank'rel="noreferrer"><img src={instagram} alt="instagram" /></a>
-    <a href="https://www.facebook.com/kuk.ss21/" target='_blank'rel="noreferrer"><img src={facebook} alt="facebook" /></a>
- </nav>
-        </footer>
-     );
+  return (
+    <FooterWrapper>
+      <Button variant="contained" onClick={handleClick}>
+        Send Me Email
+      </Button>
+      <ContactTitle>or find me in</ContactTitle>
+      <FooterNav>
+        <SocialLink href="https://t.me/torosya1666'" target="_blank" rel="noreferrer">
+          <FaTelegramPlane size={32} color="#30a4da" />
+        </SocialLink>
+        <SocialLink href="https://www.instagram.com/torosyan1666/" target="_blank" rel="noreferrer">
+          <AiOutlineInstagram size={32} color="#b00fca" />
+        </SocialLink>
+        <SocialLink href="https://www.facebook.com/kuk.ss21/" target="_blank" rel="noreferrer">
+          <AiOutlineFacebook size={32} color="#1773ea" />
+        </SocialLink>
+        <SocialLink href="https://www.linkedin.com/in/hovhannes-torosyan-a4b7ab1a9/" target="_blank" rel="noreferrer">
+          <AiOutlineLinkedin size={32} color="#0a66c2" />
+        </SocialLink>
+      </FooterNav>
+    </FooterWrapper>
+  );
 }
 
 export default Footer;

@@ -1,8 +1,32 @@
 import { useEffect, useState } from "react";
 import { getArticlesByTag } from "../newsApi";
+import CircularProgress from "@mui/material/CircularProgress";
+import styled from "@mui/material/styles/styled";
 
-import "../newsBody/NewsBody.css";
-import load from "../../../../../assets/images/gif/YlWC.gif";
+const NewsBodyWrapper = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+});
+
+const NewsTitle = styled("h1")({
+  fontSize: 36,
+  fontWeight: "bold",
+  marginBottom: 20,
+});
+
+const ArticleTitle = styled("h4")({
+  fontSize: 20,
+  marginBottom: 10,
+});
+
+const ArticleLink = styled("a")({
+  textDecoration: "none",
+  color: "black",
+  "&:hover": {
+    textDecoration: "underline",
+  },
+});
 
 function SportNews() {
   const [articles, setArticles] = useState([]);
@@ -19,24 +43,28 @@ function SportNews() {
   };
 
   return (
-    <>
-      <h1 className="news_body_title">Sport</h1>
+    <NewsBodyWrapper>
+      <NewsTitle>Sport</NewsTitle>
       {isLoading ? (
-        <img src={load} alt="load" />
+        <CircularProgress />
       ) : (
-        <div className="newsBody_wrapper">
+        <div>
           {articles.map((article) => {
             return (
-              <h4 key={article.id}>
-                <a href={article.webUrl} target="_blank" rel="noreferrer">
+              <ArticleTitle key={article.id}>
+                <ArticleLink
+                  href={article.webUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {article.webTitle}
-                </a>
-              </h4>
+                </ArticleLink>
+              </ArticleTitle>
             );
           })}
         </div>
       )}
-    </>
+    </NewsBodyWrapper>
   );
 }
 

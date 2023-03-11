@@ -1,8 +1,0 @@
-.lucky_wrapper {
-    text-align: center;
-    margin-top: calc(var(--index)*3);
-}
-
-.lucky_title {
-    font-size: calc(var(--index) * 2);
-}

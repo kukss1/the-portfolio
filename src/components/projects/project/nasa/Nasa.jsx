@@ -1,51 +1,71 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CircularProgress, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/system";
 
-import "./Nasa.css";
+const Title = styled(Typography)({
+  fontSize: 30,
+  fontWeight: "bold",
+  marginBottom: 20,
+});
 
-import load from '../../../../assets/images/gif/btnLoader.gif'
+const Wrapper = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: 20,
+});
+
+const Image = styled("img")({
+  width: "100%",
+  objectFit: "cover",
+  maxHeight: "50vh",
+  borderRadius: 10,
+});
 
 function Nasa() {
-  const [nasaApi, setNasaApi] = useState([]);
+  const [nasaApi, setNasaApi] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-    axios
-      .get(
-        "https://api.nasa.gov/planetary/apod?api_key=aTimRCpZfmQrg1XJxnVSy2JGaXvtM6XzHy5SUetz"
-      )
-      .then((response) => {
-        setNasaApi(response.data);
-        setIsLoading(false)
-      }) 
-    } catch(error) {
-        console.error(error)
+      axios
+        .get(
+          "https://api.nasa.gov/planetary/apod?api_key=aTimRCpZfmQrg1XJxnVSy2JGaXvtM6XzHy5SUetz"
+        )
+        .then((response) => {
+          setNasaApi(response.data);
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.error(error);
     }
   }, []);
 
   return (
     <>
-      <h1 className="nasa_title">Awesome NASA`s Photo of day</h1>
-      <div className="nasa_wrapper">
-        <h2>{nasaApi.copyright}</h2>
-        <h4>{nasaApi.date}</h4>
-        <h3>{nasaApi.title}</h3>
-        <div className="nasa_body">
-        {
-            isLoading ? <img src={load} alt='loading'/>
-                      :<img src={nasaApi.hdurl} alt="day Pic" />
-        }
-        <p>{nasaApi.explanation}</p>
-        </div>
-        <div className="nasa_link">
+      <Title align="center">Awesome NASA's Photo of the Day</Title>
+      <Wrapper>
+        <Typography variant="h5" align="center" color="textSecondary">
+          {nasaApi.date}
+        </Typography>
+        <Typography variant="h4" align="center">
+          {nasaApi.title}
+        </Typography>
+        {isLoading ? (
+          <CircularProgress />
+        ) : (
+          <Image src={nasaApi.hdurl} alt="NASA pic of the day" />
+        )}
+        <Typography variant="body1" align="justify">
+          {nasaApi.explanation}
+        </Typography>
         <a href={nasaApi.url} target="_blank" rel="noreferrer">
           See Photo
-        </a>   
-        </div>
-
-      </div>
+        </a>
+      </Wrapper>
     </>
   );
 }

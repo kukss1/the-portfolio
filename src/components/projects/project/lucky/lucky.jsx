@@ -1,14 +1,25 @@
-import './lucky.css'
-
+import { Box, Typography } from "@mui/material";
 import { responses } from "../../../../assets/jsons/response";
-import RandomResponse from './responses/RandomResponse';
+import RandomResponse from "./responses/RandomResponse";
 
 function Lucky() {
   return (
-    <div className='lucky_wrapper'>
-      <h1 className='lucky_title'>Am I lucky today?</h1>
-      <RandomResponse responses={responses} />
-    </div>
+    <Box sx={{ backgroundColor: "#fff", py: 8 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          px: 2,
+        }}
+      >
+        <Typography variant="h3" sx={{ mb: 4 }}>
+          Am I lucky today?
+        </Typography>
+        <RandomResponse responses={responses} />
+      </Box>
+    </Box>
   );
 }
 
