@@ -38,7 +38,7 @@ function Footer() {
       <Button variant="contained" onClick={handleClick}>
         Send Me Email
       </Button>
-      <ContactTitle>or find me in</ContactTitle>
+      <ContactTitle>OR</ContactTitle>
       <FooterNav>
         <SocialLink href="https://t.me/torosya1666'" target="_blank" rel="noreferrer">
           <FaTelegramPlane size={32} color="#30a4da" />
