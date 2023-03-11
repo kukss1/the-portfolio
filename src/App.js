@@ -17,13 +17,13 @@ function App() {
   console.log('Theme Mode:', themeMode);
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header themeMode={themeMode} onToggleTheme={toggleTheme} />
-        <Aside />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <ThemeProvider theme={themeMode === 'light' ? theme : theme}>
+    <div className="App">
+    <Header themeMode={themeMode} onToggleThemeMode={toggleTheme} />
+      <Aside />
+      <Footer />
+    </div>
+  </ThemeProvider>
   );
 }
 
