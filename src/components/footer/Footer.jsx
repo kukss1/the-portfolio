@@ -3,6 +3,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { AiOutlineFacebook } from 'react-icons/ai';
 import { AiOutlineInstagram } from "react-icons/ai";
 import {AiOutlineLinkedin} from "react-icons/ai"
+
 const FooterWrapper = styled('footer')({
   display: 'flex',
   justifyContent: "center",

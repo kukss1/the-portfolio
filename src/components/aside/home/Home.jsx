@@ -3,14 +3,14 @@ import { Box, Container, Typography, Grid, Paper } from "@mui/material";
 function Home() {
   return (
     <Container>
-      <Box sx={{ mt: 4  , backgroundColor: "#f2f2f2"}}>
+      <Box sx={{ mt: 4  , backgroundColor: "primary"}}>
         <Typography variant="h3" align="center" mb={4}>
           Some Thinks
         </Typography>
         <Grid container justifyContent="center" spacing={2}>
           <Grid item xs={12} md={8}>
-            <Paper elevation={3} sx={{ p: 2, backgroundColor: "#f2eecb"}}>
-              <Typography variant="body1" sx={{ maxWidth: "600px" }}>
+            <Paper elevation={3} sx={{ p: 2, backgroundColor: "secondary"}}>
+              <Typography variant="body1" sx={{ maxWidth: "600px" }} color="primary">
                 The world we live in today is facing many challenges, from
                 climate change to poverty and social injustice. It can be easy
                 to feel overwhelmed by these issues and to believe that there is
@@ -45,8 +45,8 @@ function Home() {
         </Typography>
         <Grid container justifyContent="center" spacing={2}>
           <Grid item xs={12} md={8}>
-            <Paper elevation={3} sx={{ p: 2 , backgroundColor: "#f2eecb" }}>
-              <Typography variant="body1" sx={{ maxWidth: "600px" }}>
+            <Paper elevation={3} sx={{ p: 2 , backgroundColor: "secondary" }}>
+              <Typography variant="body1" sx={{ maxWidth: "600px" }} color="primary">
                 React developer with a passion for creating dynamic and
                 responsive user interfaces. Skilled in developing high-quality
                 web applications and building reusable components. Strong

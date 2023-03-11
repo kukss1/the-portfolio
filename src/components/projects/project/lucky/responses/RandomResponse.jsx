@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, memo } from "react";
+import { useSpring, animated } from "react-spring";
 import { styled } from "@mui/material/styles";
-
-import load from "../../../../../assets/images/gif/YlWC.gif";
-import btnload from "../../../../../assets/images/gif/btnLoader.gif";
+import CircularProgress from "@mui/material/CircularProgress";
+import Button from "@mui/material/Button";
 
 const ResponseWrapper = styled("div")({
   display: "flex",
@@ -13,14 +13,23 @@ const ResponseWrapper = styled("div")({
   borderRadius: "10px",
 });
 
-const ResponseBody = styled("h1")({
+const ResponseBody = styled(animated.h1)({
   fontSize: "2.5rem",
   fontWeight: "bold",
   color: "#000",
 });
 
-const ResponseBtn = styled("button")({
-  border: "none",
+const ResponseBtnWrapper = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+});
+
+const ResponseBtnLoader = styled(CircularProgress)({
+  color: "#fff",
+  marginRight: "10px",
+});
+
+const ResponseBtn = styled(Button)({
   borderRadius: "10px",
   padding: "20px",
   fontSize: "1.5rem",
@@ -34,17 +43,15 @@ const ResponseBtn = styled("button")({
   },
 });
 
-const ResponseBtnLoader = styled("img")({
-  height: "30px",
-});
-
-const ResponseLoaderGif = styled("img")({
-  height: "100px",
-});
-
 const RandomResponse = ({ responses }) => {
   const [selectedResponse, setSelectedResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const fadeIn = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 1000,
+  });
 
   const handleClick = useCallback(() => {
     setIsLoading(true);
@@ -64,20 +71,20 @@ const RandomResponse = ({ responses }) => {
     <>
       <ResponseWrapper>
         {isLoading ? (
-          <ResponseLoaderGif src={load} alt="loading" />
+          <CircularProgress color="primary" />
         ) : (
-          <ResponseBody>{selectedResponse}</ResponseBody>
+          <ResponseBody style={fadeIn}>{selectedResponse}</ResponseBody>
         )}
       </ResponseWrapper>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <ResponseBtn onClick={handleClick}>
+      <ResponseBtnWrapper>
+        <ResponseBtn onClick={handleClick} disabled={isLoading}>
           {isLoading ? (
-            <ResponseBtnLoader src={btnload} alt="load" />
+            <ResponseBtnLoader size={24} thickness={6} />
           ) : (
             "Tap to know"
           )}
         </ResponseBtn>
-      </div>
+      </ResponseBtnWrapper>
     </>
   );
 };
