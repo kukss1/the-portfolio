@@ -9,6 +9,7 @@ import Calculator from "../projects/project/calculator/Calculator";
 import News from "../projects/project/news/News";
 import Nasa from "../projects/project/nasa/Nasa";
 import Users from "../projects/project/ussers/Users";
+import DeleteReviewPage from "./DeleteReviewPage";
 
 
 const Aside = () => {
@@ -23,6 +24,7 @@ const Aside = () => {
         <Route path="news/*" element={<News />} />
         <Route path="/nasa" element={<Nasa />} />
         <Route path="/users" element={<Users/>}/>
+        <Route path="/delete" element={<DeleteReviewPage/>}/>
       </Routes>
     </aside>
   );
