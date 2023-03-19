@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { darkTheme } from './theme';
 import {lightTheme} from './theme'
 import { createStyles, CssBaseline } from '@mui/material';
+import { Analytics } from '@vercel/analytics/react';
 
 import Aside from "./components/aside/Aside";
 import Footer from "./components/footer/Footer";
@@ -35,6 +36,7 @@ function App() {
         <Header themeMode={themeMode} onToggleThemeMode={toggleThemeMode} />
         <Aside />
         <Footer />
+        <Analytics />
       </div>
     </ThemeProvider>
   );
